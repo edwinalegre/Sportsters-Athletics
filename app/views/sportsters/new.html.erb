@@ -1,0 +1,19 @@
+
+<%= form_for(@sportster) do |f| %>
+  
+  <%= f.label :name, "First Name:" %><br>
+  <%= f.text_field :firstname %><br>
+  <%= f.label :name, "Last Name:" %><br>
+  <%= f.text_field :lastname %><br>
+  <%= f.label :name, "Team:" %><br>
+  <%= f.text_field :team %><br>
+  <%= f.label :name, "Year:" %><br>
+  <%= f.text_field :year %><br>
+  <%= f.label :name, "Profile Image (url)" %><br>
+  <%= f.text_field :photo %><br>
+  <%= f.label :name, "Division" %><br>
+  <%= f.text_field :division %><br>
+  <%= f.label :name, "Sport" %><br>
+  <%= f.text_field :sport %><br>
+<%= f.submit "Add Participant", class: "btn btn-default" %>
+<% end %><br>

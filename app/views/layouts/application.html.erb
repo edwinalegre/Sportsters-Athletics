@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html ng-app="sportsterApp">
+<head>
+  <title>Sportsters Athletics: Yearbook</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= csrf_meta_tags %>
+</head>
+<body ng-controller="sportsterController as sports">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Sportsters: Yearbook</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Add Sportster", "/sportsters" %></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<form class="container-fluid" role="search">
+        <div class="form-group">
+          <input type="text" ng-model="search.firstname" placeholder="Search by First Name">
+          <input type="text" ng-model="search.lastname" placeholder="Search by Last Name">
+          <input type="text" ng-model="search.team" placeholder="Search by Team">
+        Division
+          <select ng-model="search.division">
+            <option></option>
+            <option>PeeWee</option>
+            <option>Minors I</option>
+            <option>Minors II</option>
+            <option>Majors</option>
+            <option>Girls</option>
+          </select>
+        Sport
+          <select ng-model="search.sport">
+            <option></option>
+            <option>Basketball</option>
+            <option>Baseball</option>
+            <option>Soccer</option>
+          </select>
+        Year
+          <select ng-model="search.year">
+            <option></option>
+            <option>2011</option>
+            <option>2012</option>
+            <option>2013</option>
+            <option>2014</option>
+            <option>2015</option>
+          </select>
+        </div>
+      </form>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>" role="alert">
+      <%= value %>
+    </div>
+  <% end %>
+<%= yield %>
+
+</body>
+</html>

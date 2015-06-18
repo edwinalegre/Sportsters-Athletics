@@ -1,0 +1,46 @@
+body {
+  margin-top: 55px;
+}
+.photo {
+  background-color: #FFF;
+  border: 1px solid #CCC;
+}
+.profile {
+  margin-top: 10px;
+}
+.image {
+    margin: 0 auto;
+}
+.buttons {
+  margin: 15px;
+}
+.name {
+  color: #FFF;
+  font-size: 21px;
+  background-color: #444;
+  height: 50px;
+  text-align: center;
+  padding: 10px;
+}
+.team, .sport {
+  border-left: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
+  border-right: 1px solid #CCC;
+  padding: 10px;
+}
+.sport {
+  text-align: right;
+  background-repeat: no-repeat;
+  background-size: 75px;
+  background-color: #DDD;
+}
+.soccer {
+  background-image: url('http://bestclipartblog.com/clipart-pics/soccer-ball-clipart-5.gif');
+}
+.basketball {
+  background-image: url('http://images.clipartpanda.com/basketball-hoop-clipart-9cpzGqgcE.png');
+}
+.baseball {
+  background-image: url('http://www.i2clipart.com/cliparts/a/4/5/f/clipart-baseball-a45f.png');
+}
+
