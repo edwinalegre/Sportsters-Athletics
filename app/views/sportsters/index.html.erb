@@ -34,7 +34,7 @@
 
 <div class="container-fluid">
 <div class="row">
-  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2" ng-repeat="item in sportsters | filter:search">
+  <div class="col-xs-6 col-sm-4 col-md-4 col-lg-2" ng-repeat="item in sportsters | filter:search | orderBy:'lastname'">
     <div class="profile">
       <div class="photo"><a href="/sportsters/{{item.id}}"><img src="{{item.photo.thumb.url}}" class="img-responsive image"></a>
         <div class="name"><a href="/sportsters/{{item.id}}">{{item.id}}:</a> {{item.firstname}} {{item.lastname}}</div>
