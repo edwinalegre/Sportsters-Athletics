@@ -2,6 +2,7 @@
   <br />
   <div class="buttons"><!-- 
     <button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Edit</button> -->
+    <%= link_to "Back", sportsters_path, class: "btn btn-default" %>
     <%= link_to 'Edit', edit_sportster_path(@sportster), class: "btn btn-default" %>
     <%= link_to 'Delete', @sportster, method: :delete, class: "btn btn-danger" %>
   </div>
@@ -66,7 +67,7 @@
         <%= f.select(:division) do %>
           <%= content_tag(:option, @sportster[:division], value: @sportster[:division]) %>
           <% [
-                ['Pee Wee', 'Pee Wee'],
+                ['Pee Wees', 'Pee Wees'],
                 ['Minors I', 'Minors I'],
                 ['Minors II', 'Minors II'],
                 ['Majors', 'Majors'],

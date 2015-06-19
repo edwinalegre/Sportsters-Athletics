@@ -1,19 +1,72 @@
 
+<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">Add Participant</button>
+
+<!-- Modal -->
 <%= form_for(@sportster) do |f| %>
-  
-  <%= f.label :name, "First Name:" %><br>
-  <%= f.text_field :firstname %><br>
-  <%= f.label :name, "Last Name:" %><br>
-  <%= f.text_field :lastname %><br>
-  <%= f.label :name, "Team:" %><br>
-  <%= f.text_field :team %><br>
-  <%= f.label :name, "Year:" %><br>
-  <%= f.text_field :year %><br>
-  <%= f.label :name, "Profile Image (url)" %><br>
-  <%= f.text_field :photo %><br>
-  <%= f.label :name, "Division" %><br>
-  <%= f.text_field :division %><br>
-  <%= f.label :name, "Sport" %><br>
-  <%= f.text_field :sport %><br>
-<%= f.submit "Add Participant", class: "btn btn-default" %>
-<% end %><br>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sportster Profile</h4>
+      </div>
+      <div class="modal-body">
+        
+        <%= f.label :name, "First Name:" %><br>
+        <%= f.text_field :firstname %><br>
+        <%= f.label :name, "Last Name:" %><br>
+        <%= f.text_field :lastname %><br>
+        <%= f.label :name, "Team:" %><br>
+        <%= f.text_field :team %><br>
+        <%= f.label :name, "Profile Image (url)" %><br>
+        <%= f.file_field :photo %><br>
+
+        <%= f.label :name, "Year" %><br>
+        <%= f.select(:year) do %>
+          <%= content_tag(:option, @sportster[:year], value: @sportster[:year]) %>
+          <% [
+                [2010, 2010],
+                [2011, 2011],
+                [2012, 2012],
+                [2013, 2013],
+                [2014, 2014],
+                [2015, 2015]
+          ].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+          <% end %>
+        <% end %><br>
+
+        <%= f.label :name, "Sport" %><br>
+        <%= f.select(:sport) do %>
+          <%= content_tag(:option, @sportster[:sport], value: @sportster[:sport]) %>
+          <% [
+                ['Baseball', 'Baseball'],
+                ['Basketball', 'Basketball'],
+                ['Soccer', 'Soccer']
+          ].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+          <% end %>
+        <% end %><br>
+
+        <%= f.label :name, "Division" %><br>
+        <%= f.select(:division) do %>
+          <%= content_tag(:option, @sportster[:division], value: @sportster[:division]) %>
+          <% [
+                ['Pee Wee', 'Pee Wee'],
+                ['Minors I', 'Minors I'],
+                ['Minors II', 'Minors II'],
+                ['Majors', 'Majors'],
+                ['Girls I', 'Girls I']
+          ].each do |c| -%>
+          <%= content_tag(:option, c.first, value: c.last) %>
+          <% end %>
+        <% end %><br>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit "Add Participant", class: "btn btn-default" %>
+        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> -->
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>

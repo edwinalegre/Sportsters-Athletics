@@ -1,7 +1,7 @@
 class SportstersController < ApplicationController
 
   def index
-    @sportster = Sportster.new
+    @sportster = Sportster.all
   end
 
   def show
@@ -9,7 +9,7 @@ class SportstersController < ApplicationController
   end
 
   def new
-    @sportster = Sportster.find(params[:id])
+    @sportster = Sportster.new
   end
 
   def create
@@ -18,7 +18,7 @@ class SportstersController < ApplicationController
 
     if @sportster.save
       flash[:success] = "Participant successfully added!"
-      redirect_to root_path
+      redirect_to sportster_path(@sportster)
     else
       render :index
     end
@@ -33,7 +33,7 @@ class SportstersController < ApplicationController
 
     if @sportster.update(params.require(:sportster).permit(:firstname, :lastname, :team, :division, :photo, :year, :sport))
       flash[:success] = "Participant successfully saved!"
-      redirect_to root_path
+      redirect_to sportster_path(@sportster)
     else
       render :edit_sportster_path
     end
