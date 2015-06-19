@@ -52,11 +52,11 @@
         <%= f.select(:division) do %>
           <%= content_tag(:option, @sportster[:division], value: @sportster[:division]) %>
           <% [
-                ['Pee Wee', 'Pee Wee'],
+                ['Pee Wees', 'Pee Wees'],
                 ['Minors I', 'Minors I'],
                 ['Minors II', 'Minors II'],
                 ['Majors', 'Majors'],
-                ['Girls I', 'Girls I']
+                ['Girls', 'Girls']
           ].each do |c| -%>
           <%= content_tag(:option, c.first, value: c.last) %>
           <% end %>
