@@ -1,5 +1,5 @@
 
-S3_KEY: "test1"
-S3_SECRET: "test2"
-S3_BUCKET: "test3"
-S3_REGION: "test4"
+S3_KEY: "AKIAIZYVSMWA6HFF36AQ"
+S3_SECRET: "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"
+S3_BUCKET: "saladly-ea-wdi"
+S3_REGION: "us-east-1"
