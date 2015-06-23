@@ -1,0 +1,5 @@
+
+S3_KEY: "test1"
+S3_SECRET: "test2"
+S3_BUCKET: "test3"
+S3_REGION: "test4"
